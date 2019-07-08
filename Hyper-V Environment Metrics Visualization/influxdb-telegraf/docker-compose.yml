@@ -28,6 +28,9 @@ services:
     volumes:
       - ./telegraf.conf:/etc/telegraf/telegraf.conf
       - /var/run/docker.sock:/var/run/docker.sock
+      - /sys:/rootfs/sys:ro
+      - /proc:/rootfs/proc:ro
+      - /etc:/rootfs/etc:ro
     restart: always 
     networks:
       - monitoring     
