@@ -7,7 +7,10 @@ services:
     ports:
       - 8086:8086
     volumes:
-      - influxdb-volume:/var/lib/influxdb
+      - ./ssl/influxdb.key:/etc/ssl/influxdb.key
+      - ./ssl/influxdb.pem:/etc/ssl/influxdb.pem
+      - ./influxdb.conf:/etc/influxdb/influxdb.conf:ro 
+      - influxdb-volume:/var/lib/influxdb      
     environment:
       INFLUXDB_DB: telegraf 
       INFLUXDB_ADMIN_ENABLED: "True" 
