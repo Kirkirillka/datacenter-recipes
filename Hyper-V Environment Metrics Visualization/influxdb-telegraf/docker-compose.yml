@@ -30,17 +30,33 @@ services:
       - /var/run/docker.sock:/var/run/docker.sock
     restart: always 
     networks:
-      - monitoring
+      - monitoring     
 
   grafana:
     image: grafana/grafana
-    ports:
-      - 3000:3000
+    #ports:
+    #  - 3000:3000
     volumes:
       - grafana-volume:/var/lib/grafana
     networks:
       - monitoring
     restart: always
+
+  nginx:
+    image: nginx:latest
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - ./data/nginx:/etc/nginx/conf.d
+      - ./ssl/nginx.key:/etc/nginx/nginx.key
+      - ./ssl/nginx.pem:/etc/nginx/nginx.pem
+
+    networks:
+      - monitoring
+    depends_on: 
+      - grafana
+
 
 volumes:
   influxdb-volume:
