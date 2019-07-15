@@ -1,0 +1,11 @@
+Vagrant.configure("2") do |config|
+
+  config.vm.define "linux" do |linux|
+    linux.vm.box = "centos/7"
+    linux.vm.provision "shell", path: "centos_provision.sh"
+  end
+
+  # config.vm.define "microsoft" do |microsoft|
+  #   microsoft.vm.box = "mwrock/Windows2016"
+  # end
+end
