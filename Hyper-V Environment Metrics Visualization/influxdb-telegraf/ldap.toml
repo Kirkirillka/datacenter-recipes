@@ -1,0 +1,38 @@
+# http://star-t-hinking.blogspot.com/2015/10/ldap-grafana.html
+# https://confluence.atlassian.com/doc/configuring-an-ssl-connection-to-active-directory-229838458.html
+
+#
+# Working for AD
+#
+# Change "test.local" for your domain's parameters
+
+
+verbose_logging = true
+
+
+[[servers]]
+host = "dc1.test.local"
+port = 389
+use_ssl = false
+# Doesn't work in Active Directory
+#start_tls = true
+ssl_skip_verify = true
+# Search user bind dn
+bind_dn = "%s@test.local"
+
+
+
+search_filter = "(sAMAccountName=%s)"
+search_base_dns = ["dc=test,dc=local"]
+
+
+[servers.attributes]
+name = "givenName"
+surname = "sn"
+username = "sAMAccountName"
+member_of = "memberOf"
+email =  "mail"
+
+[[servers.group_mappings]]
+group_dn = "*"
+org_role = "Viewer"
