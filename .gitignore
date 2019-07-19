@@ -1,3 +1,5 @@
 .vagrant
 *.key
 *.pem
+.vscode
+

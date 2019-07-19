@@ -35,11 +35,65 @@ services:
     networks:
       - monitoring     
 
+  prometheus:
+    image: prom/prometheus:latest
+    container_name: prometheus
+    ports:
+      - 9090:9090
+    command:
+    - --config.file=/etc/prometheus/prometheus.yml
+    volumes:
+      - ./prometheus.yml:/etc/prometheus/prometheus.yml:ro
+    depends_on:
+      - cadvisor
+    networks:
+      - monitoring          
+
+  cadvisor:
+    image: google/cadvisor:latest
+    #ports:
+    #  - 8080:8080
+    volumes:
+      - /:/rootfs:ro
+      - /var/run:/var/run:rw
+      - /proc:/rootfs/proc:ro      
+      - /sys:/sys:ro
+      - /var/lib/docker/:/var/lib/docker:ro
+    depends_on:
+      - redis
+    networks:
+      - monitoring   
+
+  nodeexporter:
+    image: prom/node-exporter:latest
+    volumes:
+      - /proc:/host/proc:ro
+      - /var/run:/var/run:rw      
+      - /sys:/host/sys:ro
+      - /:/rootfs:ro
+    command:
+      - '--path.procfs=/host/proc'
+      - '--path.rootfs=/rootfs'
+      - '--path.sysfs=/host/sys'
+      - '--collector.filesystem.ignored-mount-points=^/(sys|proc|dev|host|etc)($$|/)'
+    restart: unless-stopped
+    networks:
+      - monitoring
+
+  redis:
+    image: redis:latest
+    #ports:
+    #  - 6379:6379
+    networks:
+      - monitoring        
+
   grafana:
     image: grafana/grafana
     #ports:
     #  - 3000:3000
     volumes:
+      - ./grafana.ini:/etc/grafana/grafana.ini
+      - ./ldap.toml:/etc/grafana/ldap.toml
       - grafana-volume:/var/lib/grafana
     networks:
       - monitoring
