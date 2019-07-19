@@ -58,4 +58,49 @@
   - Disk latency
   - Disk iops
   - Read/Write bytes/sec
+- Amount of processors
+- Amount of forks
 
+### Hypervisor Level
+
+- CPU
+  - CPU Core Number
+  - CPU Usage
+  - CPU Load
+- Memory 
+  - Amount of memory granted
+  - Amount of memory used
+  - Amount of memory free
+- Swap
+  - Swap usage
+  - Swap I/O bytes
+- Network
+  - RX bytes/sec
+  - TX bypes/sec
+- Disk
+  - Disk latency
+  - Disk iops
+  - Read/Write bytes/sec
+
+
+
+### Virtual Machine Level
+
+- CPU
+  - CPU Core Number
+  - CPU Usage
+  - CPU Load
+- Memory 
+  - Amount of memory granted
+  - Amount of memory used
+  - Amount of memory free
+- Swap
+  - Swap usage
+  - Swap I/O bytes
+- Network
+  - RX bytes/sec
+  - TX bypes/sec
+- Disk
+  - Disk latency
+  - Disk iops
+  - Read/Write bytes/sec
