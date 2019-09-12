@@ -1,4 +1,13 @@
-# Local Gitea installation in Docker with Drone CI
+# Gitea + Drone CI
+
+## Information
+
+In this configuration combined four elements:
+
+- PostgreSQL v11 - RDBMS
+- Gitea v1.9.3 - Github-like self-hosted repository management system
+- Drone CI Server v1.3.1 - CI/CD platform
+- Drone CI Agent v1.3.1 -  a linux agent to run jobs from Drone Server
 
 ## Installation
 

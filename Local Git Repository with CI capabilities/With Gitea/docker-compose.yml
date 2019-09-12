@@ -12,12 +12,12 @@ services:
       - ./docker-postgresql-multiple-databases:/docker-entrypoint-initdb.d
     environment:
        - POSTGRES_MULTIPLE_DATABASES=gitea,drone
-       - POSTGRES_USER=git_ci
-       - POSTGRES_PASSWORD=git_ci
+       - POSTGRES_USER=${DB_USER}
+       - POSTGRES_PASSWORD=${DB_PASS}
            
        
   gitea-app:
-    image: gitea/gitea:latest
+    image: gitea/gitea:1.9.3
     environment:
       - USER_UID=1000
       - USER_GID=1000
@@ -32,7 +32,7 @@ services:
       - postgresql      
 
   drone-server:
-    image: drone/drone
+    image: drone/drone:1.3.1
     ports:
       - "8000:80"
       - "9000:443"
@@ -50,12 +50,12 @@ services:
       - DRONE_DATABASE_DRIVER=postgres  
       - DRONE_NETWORK=ci-network
       - DRONE_RUNNER_NETWORKS=ci-network
-      - DRONE_DATABASE_DATASOURCE=postgres://${POSTGRES_USER}:${POSTGRES_PASSWORD}@postgresql:5432/drone?sslmode=disable
+      - DRONE_DATABASE_DATASOURCE=postgres://${DB_USER}:${DB_PASS}@postgresql:5432/drone?sslmode=disable
     depends_on:
       - postgresql
       
   drone-agent:
-    image: drone/agent:latest
+    image: drone/agent:1.3.1
     command: agent
     restart: always
     privileged: true
