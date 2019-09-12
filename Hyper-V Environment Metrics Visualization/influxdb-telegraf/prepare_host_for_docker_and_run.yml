@@ -1,0 +1,21 @@
+- hosts: target
+  tasks:
+  - name: Check if epel-release is installed
+    yum: 
+      name: epel-release
+      state: latest
+  - name:  Install dependencies
+    yum: 
+      name: yum-utils, device-mapper-persistent-data, lvm2
+      state: latest
+  - name: Add Docker CE repository
+    command: yum-config-manager --add-repo https://download.docker.com/linux/centos/docker-ce.repo
+  - name: Install Docker CE
+    yum:
+      name: docker-ce, docker-ce-cli, containerd.io, docker-compose
+      state: latest
+  - name: Enable docker service and make it auto-running
+    service:
+      name: docker
+      state: restarted
+      enabled: yes

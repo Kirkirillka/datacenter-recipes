@@ -1,0 +1,69 @@
+version: '3'
+services:
+
+  influxdb:
+    image: influxdb
+    restart: always
+    ports:
+      - 8086:8086
+    volumes:
+      - ./ssl/influxdb.key:/etc/ssl/influxdb.key
+      - ./ssl/influxdb.pem:/etc/ssl/influxdb.pem
+      - ./influxdb.conf:/etc/influxdb/influxdb.conf:ro 
+      - influxdb-volume:/var/lib/influxdb      
+    environment:
+      INFLUXDB_DB: telegraf 
+      INFLUXDB_ADMIN_ENABLED: "True" 
+      INFLUXDB_ADMIN_USER: admin 
+      INFLUXDB_ADMIN_PASSWORD: supersecretpassword 
+      INFLUXDB_USER: telegraf 
+      INFLUXDB_USER_PASSWORD: telegraf
+    networks:
+      - monitoring          
+      
+  telegraf:
+    image: telegraf
+    depends_on:
+      - influxdb
+    volumes:
+      - ./telegraf.conf:/etc/telegraf/telegraf.conf
+      - /var/run/docker.sock:/var/run/docker.sock
+      - /sys:/rootfs/sys:ro
+      - /proc:/rootfs/proc:ro
+      - /etc:/rootfs/etc:ro
+    restart: always 
+    networks:
+      - monitoring     
+
+  grafana:
+    image: grafana/grafana
+    #ports:
+    #  - 3000:3000
+    volumes:
+      - grafana-volume:/var/lib/grafana
+    networks:
+      - monitoring
+    restart: always
+
+  nginx:
+    image: nginx:latest
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - ./data/nginx:/etc/nginx/conf.d
+      - ./ssl/nginx.key:/etc/nginx/nginx.key
+      - ./ssl/nginx.pem:/etc/nginx/nginx.pem
+
+    networks:
+      - monitoring
+    depends_on: 
+      - grafana
+
+
+volumes:
+  influxdb-volume:
+  grafana-volume:
+
+networks:
+  monitoring:
