@@ -1,0 +1,30 @@
+Vagrant.configure("2") do |config|
+
+    config.vm.box = 'centos/7'
+
+    config.vm.define "router" do |router|
+
+        router.vm.provider "virtualbox" do |v|
+            # add unmanaged network interface
+            v.customize ["modifyvm", :id, "--nic2", "intnet"]
+        end
+
+    end
+
+    config.vm.define "vm1" do |vm1|
+
+        vm1.vm.provider "virtualbox" do |v|
+            # add unmanaged network interface
+            v.customize ["modifyvm", :id, "--nic2", "intnet"]
+        end
+    end
+
+    config.vm.define 'vm2' do |vm2|
+
+        vm2.vm.provider "virtualbox" do |v|
+            # add unmanaged network interface
+            v.customize ["modifyvm", :id, "--nic2", "intnet"]
+        end
+    end
+    
+end
