@@ -1,0 +1,4 @@
+- hosts: devops
+  become: yes
+  roles:
+    - common
