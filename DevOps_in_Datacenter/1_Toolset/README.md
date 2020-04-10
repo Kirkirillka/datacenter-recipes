@@ -1,5 +1,17 @@
 # Step-1. Toolset preparation
 
+## Tasks
+
+1. Install required software
+2. Set up a host with DevOps tools/ Run Vagrant to start up a DevOps host
+3. Check software running
+   1. `git --version`
+   2. `ansible --version`
+   3. `docker run hello-world`
+   4. `kubectl`
+
+## Description
+
 A right set of instruments is a key of success for every professional.
 
 The same works for DevOps. For the beginning, we will require the following set of instruments:
@@ -33,7 +45,6 @@ DevOps host characteristics:
 - 2 Network adapters
   - auto-configured NAT adapter (DHCP-enabled)
   - private host network (192.168.10.10, 192.168.10.10/24)
-
 
 ### Provisioning problem
 
