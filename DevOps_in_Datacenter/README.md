@@ -48,6 +48,10 @@ Installation
 - [RU] Python для сетевых инженеров - [Наташа Самойленко](https://pyneng.readthedocs.io/ru/latest/)
 - [EN] Flask - Easy Web Server on Python for Beginners - [codeburst.io](https://codeburst.io/flask-for-dummies-a-beginners-guide-to-flask-part-uno-53aec6afc5b1)
 
+## Docker and Docker-compose
+
+- [EN] Self-educational resources for Docker - [dockerhub](https://docs.docker.com/get-started/resources/)
+
 ## Git
 
 - [RU] Введение - Основы Git - [git-scm](https://git-scm.com/book/ru/v2/%D0%92%D0%B2%D0%B5%D0%B4%D0%B5%D0%BD%D0%B8%D0%B5-%D0%9E%D1%81%D0%BD%D0%BE%D0%B2%D1%8B-Git)
