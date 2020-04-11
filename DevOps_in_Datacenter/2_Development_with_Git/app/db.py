@@ -10,8 +10,7 @@ db = client[MONGODB_DB_NAME]
 collection = db[MONGODB_COLLECTION]
 
 
-def save_userdata_by_id(user_id, data={}):
-
+def save_user_data_by_id(user_id, data={}):
     data['id'] = user_id
 
     entry_id = collection.insert_one(data).inserted_id
@@ -19,8 +18,7 @@ def save_userdata_by_id(user_id, data={}):
     return entry_id
 
 
-def get_userdata_by_id(user_id):
-
+def get_user_data_by_id(user_id):
     doc = collection.find_one({"id": user_id})
 
     sanitized_doc = json.dumps(doc, default=str)

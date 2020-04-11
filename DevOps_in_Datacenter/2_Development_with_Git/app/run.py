@@ -3,7 +3,7 @@ import flask
 from flask import jsonify, request
 
 from config import *
-from db import get_userdata_by_id, save_userdata_by_id
+from db import get_user_data_by_id, save_user_data_by_id
 
 
 app = flask.Flask(__name__)
@@ -41,7 +41,7 @@ def get_by_id(id):
     :return:
     """
 
-    doc = get_userdata_by_id(id)
+    doc = get_user_data_by_id(id)
 
     return jsonify({
         "status": "ok",
@@ -65,7 +65,7 @@ def add_by_id(id):
 
     user_data = request.json or {}
 
-    entry_id = save_userdata_by_id(id, user_data)
+    entry_id = save_user_data_by_id(id, user_data)
 
     return jsonify({
         "status": "ok",
