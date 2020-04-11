@@ -4,6 +4,7 @@
 
 - [Step - 1. Toolset preparation](1_Toolset/)
 - [Step - 2. Development with Git](2_Development_with_Git/)
+- [Step - 3. Making microservice infrastructure](3_Making_microservice_infrastructure/)
 
 ## Self preparation
 
