@@ -2,7 +2,8 @@
 
 ## Available learning steps
 
-- [Step - 1. Toolset preparation](1_Toolset/README.md)
+- [Step - 1. Toolset preparation](1_Toolset/)
+- [Step - 2. Development with Git](2_Development_with_Git/)
 
 ## Self preparation
 
