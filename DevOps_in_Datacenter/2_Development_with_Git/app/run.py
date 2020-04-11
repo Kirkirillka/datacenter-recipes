@@ -5,12 +5,14 @@ import flask
 from flask import jsonify, request
 from pymongo import MongoClient
 
+from config import *
+
 app = flask.Flask(__name__)
 
-client = MongoClient("localhost", 27017)
+client = MongoClient(MONGODB_HOST, MONGODB_PORT)
 
-db = client["python-microservice"]
-collection = db['userdata']
+db = client[MONGODB_DB_NAME]
+collection = db[MONGODB_COLLECTION]
 
 
 @app.route("/")
