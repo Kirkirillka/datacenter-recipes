@@ -1,8 +1,18 @@
+import json
+
 import flask
+
 from flask import jsonify, request
+from pymongo import MongoClient
+
+from config import *
 
 app = flask.Flask(__name__)
-user_storage = {}
+
+client = MongoClient(MONGODB_HOST, MONGODB_PORT)
+
+db = client[MONGODB_DB_NAME]
+collection = db[MONGODB_COLLECTION]
 
 
 @app.route("/")
@@ -36,10 +46,15 @@ def get_by_id(id):
     :param id: user_id
     :return:
     """
+
+    doc = collection.find_one({"id": id})
+
+    sanitized_doc = json.dumps(doc, default=str)
+
     return jsonify({
         "status": "ok",
         "requested_id": id,
-        "data": user_storage.get(id, {})
+        "data": sanitized_doc
     })
 
 
@@ -56,15 +71,18 @@ def add_by_id(id):
     :return:
     """
 
-    user_data = request.json
+    user_data = request.json or {}
 
-    user_storage[id] = user_data
+    user_data['id'] = id
+
+    entry_id = collection.insert_one(user_data).inserted_id
 
     return jsonify({
         "status": "ok",
-        "message": "Data saved"
+        "message": "Data saved",
+        "doc_id": str(entry_id)
     })
 
 
 if __name__ == '__main__':
-    app.run("0.0.0.0", 9000)
+    app.run(HOST, PORT)
