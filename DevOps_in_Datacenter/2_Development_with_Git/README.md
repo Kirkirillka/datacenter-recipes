@@ -1,5 +1,16 @@
 # Step - 2. Development with Git.
 
+## Requirements
+
+Make sure you have the following software on your system
+
+- Git
+- Python 3.8
+- docker + docker-compose
+- Either of the following IDE:
+    - Visual Studio Code
+    - Jetbrains Pycharm Community
+
 ## Exercise
 
 In this repository you can find out a simple Python web microservice. Git flow is used as branching model. However, 
@@ -21,12 +32,50 @@ Your tasks:
 5. Complete the next release.
 5. Add new remotes (targets are GitHub and GitLab) and push your changes.
 
-## Simple Python Development
+## Short introduction into Git
 
-## Simple Git command
+There are two types of version-control systems:
+
+- Centralized
+- Decentralized
+
+Each file changes in a Git repository can be in 4 states:
+
+- Untracked
+- Unmodified
+- Modified
+- Staged
+
+![Records changes status interaction](https://git-scm.com/book/en/v2/images/lifecycle.png)
+
+
+Key features:
+
+- Git storage snapshots of changes
+- Each commit has its unique checksum
+
+Main Git objects [link](https://www.oreilly.com/library/view/version-control-with/9781449345037/ch04.html)
+
+- **Blobs** - Each version of a file is represented as a blob. Blob, a contraction of “binary large object,” is a term that’s commonly used in computing to refer to some variable or file that can contain any data and whose internal structure is ignored by the program. A blob is treated as being opaque. A blob holds a file’s data but does not contain any metadata about the file or even its name.
+- **Trees** - A tree object represents one level of directory information. It records blob identifiers, path names, and a bit of metadata for all the files in one directory. It can also recursively reference other (sub)tree objects and thus build a complete hierarchy of files and subdirectories.
+- **Commits** - A commit object holds metadata for each change introduced into the repository, including the author, committer, commit date, and log message. Each commit points to a tree object that captures, in one complete snapshot, the state of the repository at the time the commit was performed. The initial commit, or root commit, has no parent. Most commits have one commit parent, although later in the book (Chapter 9) we explain how a commit can reference more than one parent.
+- **Tags** - A tag object assigns an arbitrary yet presumably human readable name to a specific object, usually a commit. Although 9da581d910c9c4ac93557ca4859e767f5caf5169 refers to an exact and well-defined commit, a more familiar tag name like Ver-1.0-Alpha might make more sense! 
+
+
+Git branching and merging - [link](https://git-scm.com/book/en/v2/Git-Branching-Basic-Branching-and-Merging)
 
 ## Best practises with Git
 
-## Development with Git -> gitflow
+- Follow your branching conversation, they are useful!
+- Use meaningful comments - don't add a comment with message "lalalala" or similar!
+- Be afraid of deleting commits or files in repositories - better to add another commit than lose your files!
+- Don't force pushing if you don't understand consequences!
+- Using GUI is ok, don't be suspicious or overconfident.
+
+## Using Branching model - gitflow
+
+![A successful Git branching model](https://nvie.com/img/git-model@2x.png)
+
+
 
 
