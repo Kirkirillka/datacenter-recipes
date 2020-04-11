@@ -1,7 +1,6 @@
 import flask
 from flask import jsonify, request
 
-
 app = flask.Flask(__name__)
 user_storage = {}
 
@@ -24,7 +23,7 @@ def index():
     })
 
 
-@app.route("/user/get/<int:id>",methods=["GET"])
+@app.route("/user/get/<int:id>", methods=["GET"])
 def get_by_id(id):
     """
         URI to return data about the user for the given ID
@@ -40,7 +39,7 @@ def get_by_id(id):
     return jsonify({
         "status": "ok",
         "requested_id": id,
-        "data": user_storage.get(id,{})
+        "data": user_storage.get(id, {})
     })
 
 
@@ -66,5 +65,6 @@ def add_by_id(id):
         "message": "Data saved"
     })
 
+
 if __name__ == '__main__':
-    app.run("0.0.0.0",9000)
+    app.run("0.0.0.0", 9000)
