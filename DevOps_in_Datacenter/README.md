@@ -2,7 +2,9 @@
 
 ## Available learning steps
 
-- [Step - 1. Toolset preparation](1_Toolset/README.md)
+- [Step - 1. Toolset preparation](1_Toolset/)
+- [Step - 2. Development with Git](2_Development_with_Git/)
+- [Step - 3. Making microservice infrastructure](3_Making_microservice_infrastructure/)
 
 ## Self preparation
 
@@ -37,3 +39,31 @@ Installation
 
 - [RU] Введение в Vagrant - [link](https://khashtamov.com/ru/vagrant-how-to-setup/)
 - [RU] Ansible для сетевых инженеров - [Наташа Самойленко](https://natenka.gitbooks.io/ansible-dlya-setevih-inzhenerov/content/)
+
+
+### Level - 2. Experienced
+
+## Python
+
+- [RU] Python для сетевых инженеров - [Наташа Самойленко](https://pyneng.readthedocs.io/ru/latest/)
+- [EN] Flask - Easy Web Server on Python for Beginners - [codeburst.io](https://codeburst.io/flask-for-dummies-a-beginners-guide-to-flask-part-uno-53aec6afc5b1)
+
+## Docker and Docker-compose
+
+- [EN] Self-educational resources for Docker - [dockerhub](https://docs.docker.com/get-started/resources/)
+- [EN] Manage data in Docker - [dockerhub](https://docs.docker.com/storage/)
+
+## Git
+
+- [RU] Введение - Основы Git - [git-scm](https://git-scm.com/book/ru/v2/%D0%92%D0%B2%D0%B5%D0%B4%D0%B5%D0%BD%D0%B8%D0%B5-%D0%9E%D1%81%D0%BD%D0%BE%D0%B2%D1%8B-Git)
+- [RU] Основы Git - Git для сетевых инженеров [Наташа Самойленко](https://pyneng.readthedocs.io/ru/latest/book/02_git_github/git_basics.html)
+- [RU] Модели ветвления - [proglib](https://proglib.io/p/git-workflow/)
+- [EN] Git flow - a successful git branching model - [by Vincent Driessen](https://nvie.com/posts/a-successful-git-branching-model/)
+- [RU] Сложность Git Flow - [habr](https://habr.com/ru/company/flant/blog/491320/)
+
+Additional
+
+- [RU] [GitOps](https://habr.com/ru/company/flant/blog/458878/)
+
+## CI/CD
+- [RU] Зачем нужен CI/CD - [habr](https://habr.com/ru/post/353194/)
