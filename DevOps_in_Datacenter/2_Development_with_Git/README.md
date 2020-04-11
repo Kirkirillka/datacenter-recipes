@@ -19,7 +19,7 @@ the last release is not finished yet.
 ![Used commits for this exercise](images/git_tree.png)
 
 - The starting commit: c48ae1c6
-- Ending commit: c77b8137 (development branch python_develop)
+- Ending commit: 212ea477 (development branch python_develop)
 
 You have to complete the next release (the next release branch - python_master) and push repository into GitHub and GitLab.
 
