@@ -1,6 +1,22 @@
 # Step-3. Making microservice infrastructure.
 
 
+## Exercise
+
+> This exercise is most important for the on-going Kubernetes workshop, because here you will learn how to containerize your application and prepare a microservice infrastructure to run it.
+
+1. Read theoretical resources
+2. Prepare a **Dockerfile** and **docker-compose.yml** for the Python app from the [Step-2](../2_Development_with_Git).
+    - Use named volume for web server. 
+    - MongoDB must be isolated.
+    - The Python Web service is available only through Nginx proxy on default port.
+    _ Use overlay networks.
+3. Study some examples of real microservice infrastructures [in this section](#example-of-microservice-infrastructures)  below.
+4. Prepare hand-made description for the following infrastructures
+    - WordPress CRM + PostgreSQL database.
+    - A simple JavaScript [application](https://github.com/johny/react-and-redux-tasks-app) with Nginx as proxy server.
+    - One-node standalone monitoring subsystem (Prometheus + Graphana + node_exporter) and monitor local Docker host metrics with graphics.
+
 ## Short description of Docker and Docker-compose
 
 ![Docker architecture](https://docs.docker.com/engine/images/architecture.svg)
@@ -93,7 +109,7 @@ You can limit these type of resources provided by host:
 - At most memory amount available
 
 
-## Example of microservice infrastructures
+## [Example of microservice infrastructures](#Example of microservice infrastructures)
 
 
 ### GPS_Tracker
@@ -112,3 +128,8 @@ You can limit these type of resources provided by host:
 
 - [Development with Docker compose](http://howtocookmicroservices.com/docker-compose/)
 - [docker-compose.yml](https://gist.github.com/akurkin/1d43fb03c6f415093bab)
+
+
+### Prometheus stack
+
+- [GitHub repository](https://github.com/vegasbrianc/prometheus)
