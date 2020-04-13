@@ -27,11 +27,6 @@ Key advises:
 - Divide your infrastructure into testing and production part
 
 
-// TODO
-
-- Volumes
-- Resource limitations
-
 
 ### Docker networks
 
@@ -69,6 +64,22 @@ Using the macvlan driver is sometimes the best choice when dealing with legacy a
 #### None mode
 
 **none** - doesn't allow a container to communicate over network.
+
+
+### Working with Data in Docker
+
+More information is available [here](https://docs.docker.com/storage/).
+
+By default, each container has a writable layer, however, this layer will be deleted once the container is removed.
+
+![Types of Mounts](https://docs.docker.com/storage/images/types-of-mounts.png)
+
+There are three types of mount:
+
+- **Temporary storage in memory** - `tmpfs`.
+- **Bind mounts** - mount a directory\file from host machine into container.
+- **Volumes** - volumes are managed by Docker. Can be *named* or *anonymous*. You can define a driver for volume and access not-Docker provided mount (NFS, Cloud-based driver, etc.).
+
 
 
 ## Example of microservice infrastructures

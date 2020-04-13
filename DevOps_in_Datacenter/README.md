@@ -51,6 +51,7 @@ Installation
 ## Docker and Docker-compose
 
 - [EN] Self-educational resources for Docker - [dockerhub](https://docs.docker.com/get-started/resources/)
+- [EN] Manage data in Docker - [dockerhub](https://docs.docker.com/storage/)
 
 ## Git
 
