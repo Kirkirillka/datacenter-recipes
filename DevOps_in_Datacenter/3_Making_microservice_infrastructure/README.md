@@ -81,6 +81,17 @@ There are three types of mount:
 - **Volumes** - volumes are managed by Docker. Can be *named* or *anonymous*. You can define a driver for volume and access not-Docker provided mount (NFS, Cloud-based driver, etc.).
 
 
+### Resource limits
+
+[About Resource limits](https://docs.docker.com/config/containers/resource_constraints/)
+
+
+You can limit these type of resources provided by host:
+
+- At most CPU cycles time available
+- Which CPU cores are accessible for a container
+- At most memory amount available
+
 
 ## Example of microservice infrastructures
 
