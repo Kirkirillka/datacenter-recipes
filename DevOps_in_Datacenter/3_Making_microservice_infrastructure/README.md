@@ -29,9 +29,47 @@ Key advises:
 
 // TODO
 
-- Networks
 - Volumes
 - Resource limitations
+
+
+### Docker networks
+
+Network driver summary
+- **User-defined bridge networks** are best when you need multiple containers to communicate on the same Docker host.
+- **Host** networks are best when the network stack should not be isolated from the Docker host, but you want other aspects of the container to be isolated.
+- **Overlay** networks are best when you need containers running on different Docker hosts to communicate, or when multiple applications work together using swarm services.
+- **Macvlan** networks are best when you are migrating from a VM setup or need your containers to look like physical hosts on your network, each with a unique MAC address.
+- **Third-party network plugins** allow you to integrate Docker with specialized network stacks.
+
+[Network modes](https://docs.docker.com/network/):
+
+#### Bridge mode 
+
+**bridge** - Isolated L2 networking, default mode, create a bridge interface in the host machine, then in each container create an isolated interface and bridge it to the host.
+ 
+ **Bridge networks are usually used when your applications run in standalone containers that need to communicate**.
+
+#### Host mode
+
+**host** - Run on the host network. Use the same port pool ($2^{16} -1$) on the host machine, so possible overlapping possible.
+
+
+#### Overlay mode
+
+**Overlay** - Isolated L3 networking, VXLAN in Docker Swarm, the same for standalone Docker.
+
+#### Macvlan mode
+
+**macvlan** - set an unique MAC address on isolated container interface, host interface runs promiscuous mode.
+
+Using the macvlan driver is sometimes the best choice when dealing with legacy applications that expect to be directly connected to the physical network, rather than routed through the Docker host’s network stack.
+
+
+#### None mode
+
+**none** - doesn't allow a container to communicate over network.
+
 
 ## Example of microservice infrastructures
 
