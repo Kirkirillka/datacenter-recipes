@@ -24,13 +24,13 @@ There are theoretical and practical exercises which will help you to understand 
 #### Docker: Introduction and simple usage
 
 - [RU] Что такое Docker ([xgu](http://xgu.ru/wiki/Docker))
-- [EN] What is Docker?  ([redhat](https://www.redhat.com/en/topics/containers/what-is-docker))
+- [EN] What is Docker? ([redhat](https://www.redhat.com/en/topics/containers/what-is-docker))
 - [RU] Понимая Docker ([habr](https://habr.com/ru/post/253877/))
 - [EN] Build and run your container ([docker wiki](https://docs.docker.com/get-started/part2/))
 - [RU] Погружаемся в Dockerfile ([habr](https://habr.com/ru/company/infobox/blog/240623/))
 - [RU] Что такое Docker Compose ([habr](https://habr.com/ru/company/ruvds/blog/450312/))
 - [EN] Docker-compose overview ([docker wiki](https://docs.docker.com/compose/))
-  
+
 Installation
 
 - How to install Docker - [docker wiki](https://docs.docker.com/get-docker/)
@@ -67,7 +67,7 @@ Installation
 
 Additional
 
-- [RU] [GitOps](https://habr.com/ru/company/flant/blog/458878/)
+- [RU][gitops](https://habr.com/ru/company/flant/blog/458878/)
 
 #### Ansible
 
@@ -77,3 +77,19 @@ Additional
 #### CI/CD
 
 - [RU] Зачем нужен CI/CD - [habr](https://habr.com/ru/post/353194/)
+
+### Level - 3. Advanced
+
+#### Kubernetes
+
+- [EN] Kubernetes Getting Started - [kubernetes docs](https://kubernetes.io/docs/setup/)
+- [EN] Kubernetes Cheatsheets - [kubernetes docs](https://kubernetes.io/docs/reference/kubectl/cheatsheet/)
+- [RU] HA-Kubernetes on Bare-Metal - [habr](https://habr.com/ru/company/southbridge/blog/439562/)
+- [EN] Comparing popular CNI plugins for Kubernetes - [rancher](https://rancher.com/blog/2019/2019-03-21-comparing-kubernetes-cni-providers-flannel-calico-canal-and-weave/)
+- [EN] Create a Certificate for a new user - [medium.com](https://medium.com/better-programming/k8s-tips-give-access-to-your-clusterwith-a-client-certificate-dfb3b71a76fe)
+- [EN] Using RBAC Authorization - [kubernetes docs](https://kubernetes.io/docs/reference/access-authn-authz/rbac/)
+- [EN] Persistent Volumes - [kubernetes docs](https://kubernetes.io/docs/concepts/storage/persistent-volumes/)
+
+For exercise
+
+- [EN] Helm installation - [helm documentation](https://helm.sh/docs/intro/install/)
