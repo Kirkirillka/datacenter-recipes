@@ -35,25 +35,28 @@ Installation
 - How to install Docker - [docker wiki](https://docs.docker.com/get-docker/)
 - How to install Docker-compose [docker wiki](https://docs.docker.com/compose/install/)
 
+#### Ansible
+
+- [EN] Ansible Getting Started - [ansible doc](https://docs.ansible.com/ansible/latest/user_guide/intro_getting_started.html)
+
 #### Additional tools
 
 - [RU] Введение в Vagrant - [link](https://khashtamov.com/ru/vagrant-how-to-setup/)
 - [RU] Ansible для сетевых инженеров - [Наташа Самойленко](https://natenka.gitbooks.io/ansible-dlya-setevih-inzhenerov/content/)
 
-
 ### Level - 2. Experienced
 
-## Python
+#### Python
 
 - [RU] Python для сетевых инженеров - [Наташа Самойленко](https://pyneng.readthedocs.io/ru/latest/)
 - [EN] Flask - Easy Web Server on Python for Beginners - [codeburst.io](https://codeburst.io/flask-for-dummies-a-beginners-guide-to-flask-part-uno-53aec6afc5b1)
 
-## Docker and Docker-compose
+#### Docker and Docker-compose
 
 - [EN] Self-educational resources for Docker - [dockerhub](https://docs.docker.com/get-started/resources/)
 - [EN] Manage data in Docker - [dockerhub](https://docs.docker.com/storage/)
 
-## Git
+#### Git
 
 - [RU] Введение - Основы Git - [git-scm](https://git-scm.com/book/ru/v2/%D0%92%D0%B2%D0%B5%D0%B4%D0%B5%D0%BD%D0%B8%D0%B5-%D0%9E%D1%81%D0%BD%D0%BE%D0%B2%D1%8B-Git)
 - [RU] Основы Git - Git для сетевых инженеров [Наташа Самойленко](https://pyneng.readthedocs.io/ru/latest/book/02_git_github/git_basics.html)
@@ -65,5 +68,11 @@ Additional
 
 - [RU] [GitOps](https://habr.com/ru/company/flant/blog/458878/)
 
-## CI/CD
+#### Ansible
+
+- [EN] Ansible Workshops - [ansible githun.io](https://ansible.github.io/workshops/)
+- [EN] Ansible Best Practises - [ansible doc](https://docs.ansible.com/ansible/latest/user_guide/playbooks_best_practices.html)
+
+#### CI/CD
+
 - [RU] Зачем нужен CI/CD - [habr](https://habr.com/ru/post/353194/)
