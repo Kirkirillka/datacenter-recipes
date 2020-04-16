@@ -4,6 +4,9 @@
 - https://github.com/cncf/presentations/tree/master/kubernetes
 - [RU] Kubernetes для бизнеса -[True Engineering](https://trueengineering.ru/ru/cases/k8s_for_business)
 
+- Suggested presentation (modification of [Introduction to Kubernetes by](https://drive.google.com/file/d/1Lfi8r0GZdFIMgprUrwaf-Lru5RsctML7/view) by Rishabh Indoria (March 2019)
+  ) - [link](https://drive.google.com/file/d/1-Yo6aP-JaOOp_XTtcT6iixSkqXZFi4w3/view?usp=sharing)
+
 ## Exercise
 
 Your task is to install a 3-nodes Kubernetes cluster.
