@@ -1,0 +1,4 @@
+- hosts: load-balancer
+  become: yes
+  roles:
+    - load-balancer

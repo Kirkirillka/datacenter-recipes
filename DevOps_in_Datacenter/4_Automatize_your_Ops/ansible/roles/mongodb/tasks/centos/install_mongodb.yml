@@ -1,0 +1,8 @@
+- name: Ensure epel-release is installed
+  yum:
+    name: epel-release
+    statue: latest
+- name: Install Mongo on CentOS
+  yum:
+    name: mongodb
+    state: present

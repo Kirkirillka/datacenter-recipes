@@ -1,5 +1,31 @@
 # Automatize your Operations
 
+## Requirements
+
+- Visual Studio Code
+- Ansible
+- A set of virtual environments
+  - staging/testing environment
+    - 1 Debian10 host
+  - production environment
+    - 1 Debian10 host
+    - 2 CentOS hosts
+
+To make our life easier, we will use special syntax plugins for VS Code/
+For the workshop, you should have some kind of virtual environment where we will play around with Ansible.
+
+In the workshop we will do:
+
+- Prepare inventory file for staging/production environment
+- Prepare a role to install required software
+  - load-balancer: nginx
+  - db: MongoDB
+  - simple_python_app: running in docker
+- Deploy a simple microservice infrastructure on those hosts
+- Ensure that SSH root login is prohibited
+
+For simplicity, let's suppose we're deploying our software like this is just static files located in the same directory as Ansible files are.In real case, please, use cloning from git repositories and Docker images.
+
 ## Exercise
 
 In this workshop your task is to create a manageable web service infrastructure.
@@ -27,9 +53,7 @@ Finally, as result, you will receive:
 
 ## Short introduction
 
-// TODO
-
-- Add link on Ansible
-- Write Ansible key ideas
-- Ansible best practise
- 
+- [Introduction to Ansible by Radenko Čitaković](https://www.cisco.com/c/dam/m/sr_rs/events/2019/cisco-connect/pdf/using_ansible_in_dc_automation_radenko_citakovic.pdf)
+- [Another good list of Ansible playbooks](https://github.com/Kirkirillka/ansible-handmade/tree/master/playbooks)
+- [Example of IPSec server Ansible role](https://github.com/Kirkirillka/ansible-ipsec-vpn)
+- [Ansible Best Practises](https://docs.ansible.com/ansible/latest/user_guide/playbooks_best_practices.html)

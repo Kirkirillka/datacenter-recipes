@@ -1,0 +1,4 @@
+- hosts: db
+  become: yes
+  roles:
+    - mongodb
