@@ -1,0 +1,16 @@
+- name: Deploy a template for Nginx
+  template:
+    src: nginx.conf.j2
+    dest: /etc/nginx/nginx.conf
+  register: nginx_new_config
+- name: Create a service user for nginx
+  user:
+    name: "{{DEFAULT_USER}}"
+    state: present
+    system: yes
+    shell: /bin/nologin
+- name: Test a new config
+  shell: nginx -t && true
+  when: nginx_new_config.changed
+  notify:
+    - restart nginx

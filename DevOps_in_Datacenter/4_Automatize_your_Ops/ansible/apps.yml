@@ -1,0 +1,5 @@
+- hosts: apps
+  become: yes
+  roles:
+    - app
+    - docker

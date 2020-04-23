@@ -1,0 +1,4 @@
+- name: Install all packages
+  import_tasks: install_packages.yml
+- name: Configure Nginx
+  import_tasks: configure.yml
