@@ -1,2 +1,7 @@
 - name: Install all necessary packages
   import_tasks: install.yml
+- name: Deploy MongoD configuration
+  template:
+    src: mongod.conf.j2
+    dest: /etc/mongod.conf
+  notify: restart mongodb
