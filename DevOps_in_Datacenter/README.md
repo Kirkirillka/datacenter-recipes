@@ -79,3 +79,19 @@ Additional
 #### CI/CD
 
 - [RU] Зачем нужен CI/CD - [habr](https://habr.com/ru/post/353194/)
+
+### Level - 3. Advanced
+
+#### Kubernetes
+
+- [EN] Kubernetes Getting Started - [kubernetes docs](https://kubernetes.io/docs/setup/)
+- [EN] Kubernetes Cheatsheets - [kubernetes docs](https://kubernetes.io/docs/reference/kubectl/cheatsheet/)
+- [RU] HA-Kubernetes on Bare-Metal - [habr](https://habr.com/ru/company/southbridge/blog/439562/)
+- [EN] Comparing popular CNI plugins for Kubernetes - [rancher](https://rancher.com/blog/2019/2019-03-21-comparing-kubernetes-cni-providers-flannel-calico-canal-and-weave/)
+- [EN] Create a Certificate for a new user - [medium.com](https://medium.com/better-programming/k8s-tips-give-access-to-your-clusterwith-a-client-certificate-dfb3b71a76fe)
+- [EN] Using RBAC Authorization - [kubernetes docs](https://kubernetes.io/docs/reference/access-authn-authz/rbac/)
+- [EN] Persistent Volumes - [kubernetes docs](https://kubernetes.io/docs/concepts/storage/persistent-volumes/)
+
+For exercise
+
+- [EN] Helm installation - [helm documentation](https://helm.sh/docs/intro/install/)
