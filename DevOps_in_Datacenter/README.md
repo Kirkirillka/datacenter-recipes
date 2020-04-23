@@ -15,6 +15,8 @@ There are theoretical and practical exercises which will help you to understand 
 
 ### Level -1. Introduction
 
+- Another good introduction into DevOps [here](https://github.com/Kirkirillka/hands-on-DevOps)
+
 #### Virtualization and Containerization
 
 - [EN] What is Virtualization? ([wiki](https://en.wikipedia.org/wiki/Virtualization))
@@ -24,13 +26,13 @@ There are theoretical and practical exercises which will help you to understand 
 #### Docker: Introduction and simple usage
 
 - [RU] Что такое Docker ([xgu](http://xgu.ru/wiki/Docker))
-- [EN] What is Docker?  ([redhat](https://www.redhat.com/en/topics/containers/what-is-docker))
+- [EN] What is Docker? ([redhat](https://www.redhat.com/en/topics/containers/what-is-docker))
 - [RU] Понимая Docker ([habr](https://habr.com/ru/post/253877/))
 - [EN] Build and run your container ([docker wiki](https://docs.docker.com/get-started/part2/))
 - [RU] Погружаемся в Dockerfile ([habr](https://habr.com/ru/company/infobox/blog/240623/))
 - [RU] Что такое Docker Compose ([habr](https://habr.com/ru/company/ruvds/blog/450312/))
 - [EN] Docker-compose overview ([docker wiki](https://docs.docker.com/compose/))
-  
+
 Installation
 
 - How to install Docker - [docker wiki](https://docs.docker.com/get-docker/)
@@ -67,11 +69,11 @@ Installation
 
 Additional
 
-- [RU] [GitOps](https://habr.com/ru/company/flant/blog/458878/)
+- [RU][gitops](https://habr.com/ru/company/flant/blog/458878/)
 
 #### Ansible
 
-- [EN] Ansible Workshops - [ansible githun.io](https://ansible.github.io/workshops/)
+- [EN] Ansible Workshops - [ansible github.io](https://ansible.github.io/workshops/)
 - [EN] Ansible Best Practises - [ansible doc](https://docs.ansible.com/ansible/latest/user_guide/playbooks_best_practices.html)
 
 #### CI/CD
