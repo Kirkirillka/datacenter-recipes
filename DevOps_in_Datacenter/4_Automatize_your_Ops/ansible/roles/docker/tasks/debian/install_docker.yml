@@ -1,0 +1,27 @@
+- name: Ensure additional dependencies are installed
+  apt:
+    name:
+      - apt-transport-https
+      - ca-certificates
+      - curl
+      - gnupg-agent
+      - software-properties-common
+    state: present
+- name: Add Docker repo key
+  apt_key:
+    url: https://download.docker.com/linux/debian/gpg
+    state: present
+- name: Add Docker repo in APT sources
+  apt_repository:
+    repo: "deb [arch=amd64] https://download.docker.com/linux/debian buster stable"
+    state: present
+    filename: docker
+- name: Install Docker and support software
+  apt:
+    name:
+      - docker-ce
+      - docker-ce-cli
+      - containerd.io
+      - docker-compose
+    state: present
+    update_cache: yes
