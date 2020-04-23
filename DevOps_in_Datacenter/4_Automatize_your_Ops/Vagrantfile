@@ -3,12 +3,12 @@
 
 # Main idea - https://gist.github.com/roblayton/c629683ca74658412487. Thanks you very much, @roblayton!
 infrastructure = {
-  "stage" => {
+  "staging" => {
     "mixed" => { :ip => "192.168.30.20", :cpus => 1, :mem => 1024, :os => "debian/buster64" },
   },
   "production" => {
     "loadbalancer" => { :ip => "192.168.40.20", :cpus => 1, :mem => 512, :os => "debian/buster64" },
-    "app" => { :ip => "192.168.40.30", :cpus => 1, :mem => 1024, :os => "centos/7" },
+    "app" => { :ip => "192.168.40.30", :cpus => 1, :mem => 1024, :os => "debian/buster64" },
     "db" => { :ip => "192.168.40.40", :cpus => 1, :mem => 512, :os => "centos/7" },
   }
 }
