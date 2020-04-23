@@ -8,8 +8,8 @@
   - staging/testing environment
     - 1 Debian10 host
   - production environment
-    - 1 Debian10 host
-    - 2 CentOS hosts
+    - 2 Debian 10 Buster hosts
+    - 1 CentOS host
 
 To make our life easier, we will use special syntax plugins for VS Code/
 For the workshop, you should have some kind of virtual environment where we will play around with Ansible.
@@ -19,8 +19,8 @@ In the workshop we will do:
 - Prepare inventory file for staging/production environment
 - Prepare a role to install required software
   - load-balancer: nginx
-  - db: MongoDB
-  - simple_python_app: running in docker
+  - db: MongoDB + docker
+  - simple_python_app: Python3 + Python dependencies + docker
 - Deploy a simple microservice infrastructure on those hosts
 - Ensure that SSH root login is prohibited
 
