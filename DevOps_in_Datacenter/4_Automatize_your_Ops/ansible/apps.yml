@@ -1,5 +1,5 @@
-- hosts: db
+- hosts: apps
   become: yes
   roles:
-    - mongodb
+    - app
     - docker

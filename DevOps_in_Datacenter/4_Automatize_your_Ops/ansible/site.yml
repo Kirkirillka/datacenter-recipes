@@ -1,4 +1,4 @@
-- hosts: load-balancer
-  become: yes
-  roles:
-    - load-balancer
+---
+- import_playbook: loadbalancers.yml
+- import_playbook: databases.yml
+- import_playbook: apps.yml
