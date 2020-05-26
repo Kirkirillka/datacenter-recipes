@@ -1,0 +1,3 @@
+1. introduction http://slides.eightypercent.net/kubernetes-101/#18
+2. overview https://drive.google.com/open?id=1BiTIvQRmJRMpb8d-oLez6QNfu1ZDJFyu3fjDyUqGWqI
+3. Network https://speakerdeck.com/thockin/illustrated-guide-to-kubernetes-networking?slide=32
