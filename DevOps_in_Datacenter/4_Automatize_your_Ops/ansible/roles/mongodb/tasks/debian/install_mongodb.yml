@@ -1,0 +1,23 @@
+- name: Ensure a tool to manage key is installed
+  apt:
+    name: gnupg
+    state: present
+- name: Add MongoDB repo key
+  apt_key:
+    url: https://www.mongodb.org/static/pgp/server-4.2.asc
+    state: present
+- name: Add MongoDB repository
+  apt_repository:
+    repo: "deb http://repo.mongodb.org/apt/debian {{ansible_facts['ansible_distribution_major_version']}} main"
+    state: present
+    filename: mongodb
+- name: Install Community version of MongoDB via apt
+  apt:
+    name: mongodb-org
+    update_cache: yes
+    state: present
+- name: Ensure Mongod is running and enabled
+  service:
+    name: mongod
+    state: started
+    enabled: yes

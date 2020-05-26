@@ -1,0 +1,10 @@
+- name: Install Git
+  import_tasks: install_git.yml
+- name: Install Python 3.8
+  import_tasks: install_python.yml
+- name: Install Ansible
+  import_tasks: install_ansible.yml  
+- name: Install Docker
+  import_tasks: install_docker.yml    
+- name: Install kubectl
+  import_tasks: install_k8s_elements.yml

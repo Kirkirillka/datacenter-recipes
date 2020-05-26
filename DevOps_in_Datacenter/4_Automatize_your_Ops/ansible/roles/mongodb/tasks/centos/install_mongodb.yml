@@ -1,0 +1,13 @@
+- name: Add MongoDB repo key
+  rpm_key:
+    key: https://www.mongodb.org/static/pgp/server-4.2.asc
+    state: present
+- name: Add MongoDB 4.2 repository
+  yum_repository:
+    baseurl: https://repo.mongodb.org/yum/redhat/$releasever/mongodb-org/4.2/$basearch/
+    description: MongoDB Repository
+    name: mongodb
+- name: Install Mongo on CentOS
+  yum:
+    name: mongodb-org
+    state: present

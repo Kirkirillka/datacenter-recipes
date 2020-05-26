@@ -1,0 +1,12 @@
+- name: Ensure deployment directory exists
+  file:
+    path: "{{DEFAULT_APP_DEPLOYMENT_DIR}}"
+    state: directory
+- name: Deploy the app to the remote hosts
+  copy:
+    src: app
+    dest: "{{DEFAULT_APP_DEPLOYMENT_DIR}}"
+- name: Install Python
+  import_tasks: install_python.yml
+- name: Configure the application
+  import_tasks: configure.yml

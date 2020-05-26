@@ -1,0 +1,13 @@
+- name: Update default app configuration
+  template:
+    src: config.py.j2
+    dest: "{{DEFAULT_APP_DEPLOYMENT_DIR}}/app/config.py"
+- name: Install a simple python app service
+  template:
+    src: python-app.service.j2
+    dest: /etc/systemd/system/python-app.service
+- name: Start python app service
+  systemd:
+    state: started
+    name: python-app.service
+    daemon_reload: yes

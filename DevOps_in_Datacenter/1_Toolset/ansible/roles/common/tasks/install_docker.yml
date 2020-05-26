@@ -1,0 +1,32 @@
+- name: Install additional packages via Apt
+  apt:
+    pkg: 
+    - apt-transport-https
+    - ca-certificates
+    - curl
+    - gnupg-agent
+    - software-properties-common
+    state: present
+- name: Add docker repository key
+  apt_key:
+    url: https://download.docker.com/linux/ubuntu/gpg
+    state: present
+- name: Add docker repository
+  apt_repository:
+    repo: deb [arch=amd64] https://download.docker.com/linux/ubuntu bionic stable
+    state: present
+- name: Install Docker via Apt
+  apt:
+    pkg:
+    - docker-ce 
+    - docker-ce-cli 
+    - containerd.io
+    - docker-compose
+    update_cache: yes
+    state: present
+- name: Add default 'vagrant' user to 'docker' group
+  user:
+    name: vagrant
+    groups: docker
+    append: yes
+

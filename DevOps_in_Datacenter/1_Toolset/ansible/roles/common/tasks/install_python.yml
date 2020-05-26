@@ -1,0 +1,4 @@
+- name: Install Python 3.8
+  apt:
+    name: python3.8
+    state: present

@@ -1,0 +1,16 @@
+version: "3"
+services:
+  mongodb:
+    image: mongo:4.2.5-bionic
+    ports:
+      - 27017:27017
+  backend:
+    build: app/
+    ports:
+      - 9000:9000
+  loadbalancer:
+    image: nginx:1.17.9-alpine
+    ports:
+      - 80:80
+    volumes:
+    - ./loadbalancer/nginx.conf:/etc/nginx/nginx.conf

@@ -1,5 +1,8 @@
+/venv/
+.idea/
 .vagrant
 *.key
 *.pem
 .vscode
+
 

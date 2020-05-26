@@ -1,0 +1,10 @@
+[Unit]
+Description=Python Simple App Service
+
+[Service]
+WorkingDirectory={{DEFAULT_APP_DEPLOYMENT_DIR}}
+ExecStart={{DEFAULT_APP_DEPLOYMENT_DIR}}/venv/bin/python app/run.py
+
+
+[Install]
+WantedBy=multi-user.target

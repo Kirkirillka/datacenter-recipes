@@ -1,0 +1,86 @@
+#Kubernetes Bootcamp
+
+# Create a deployment with container on the specified port
+kubectl run kubernetes-bootcamp --image=gcr.io/google-samples/kubernetes-bootcamp:v1  --port=8000
+
+# Enumerate all elements in the default namespace
+kubectl get all
+
+# Get information about all elements in the default namespace
+kubectl describe all
+
+#Expose deployment to localhost 8080
+kubectl expose deployment/kubernetes-bootcamp --type="NodePort" --port 8080
+
+kubectl get services
+kubectl describe services kubernetes-bootcamp
+
+# Get pods by its labels
+kubectl get pods -l run=kubernetes-bootcamp
+kubectl get service -l run=kubernetes-bootcamp
+
+# Add a new label
+kubectl label pod kubernetes-bootcamp-8fb88dd57-lcn4x app=v1
+kubectl get pods -l app=v1
+
+# Delete service
+kubectl delete service -l run=kubernetes-bootcamp
+
+# But pod is still preceed
+kubectl get pods
+
+# Execute curl inside the pod
+
+
+
+# Get all deployments in default namespace
+kubectl get deployments
+
+#Scale pods up to 4 instances
+kubectl scale deployments/kubernetes-bootcamp --replicas=4
+kubectl get deployments
+
+# Describe the deployment
+kubectl describe deployments/kubernetes-bootcamp
+
+# Expose port again
+kubectl expose deployment/kubernetes-bootcamp --type="NodePort" --port 8080
+# Describe service
+kubectl describe services/kubernetes-bootcamp
+
+
+# Scale down services
+kubectl scale deployments/kubernetes-bootcamp --replicas=2
+
+
+
+# Update to the 2th version
+kubectl set image deployments/kubernetes-bootcamp kubernetes-bootcamp=jocatalin/kubernetes-bootcamp:v2
+kubectl get pods
+
+# Check pods working
+kubectl describe service kubernetes-bootcamp
+curl 10.0.0.10:31256
+
+# Check rollout status
+kubectl rollout status deployments/kubernetes-bootcamp
+kubectl describe pods
+
+
+# Try to update up to v10
+kubectl set image deployments/kubernetes-bootcamp kubernetes-bootcamp=gcr.io/google-samples/kubernetes-bootcamp:v10
+
+# See  an error
+kubectl get deployments
+
+# Description may say something more
+kubectl describe pods
+
+# Make roll out
+kubectl rollout undo deployments/kubernetes-bootcamp
+
+
+
+
+
+#### Ingress controlling

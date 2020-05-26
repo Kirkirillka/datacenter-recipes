@@ -1,0 +1,10 @@
+- name: Install nginx on Debian
+  apt:
+    name: nginx
+    state: present
+  when: ansible_facts['os_family'] == 'Debian'
+- name: Install nginx on CentOS
+  yum:
+    name: nginx
+    state: present
+  when: ansible_facts['os_family'] == 'CentOS'
