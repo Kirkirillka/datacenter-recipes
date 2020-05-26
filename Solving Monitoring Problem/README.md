@@ -82,8 +82,6 @@
   - Disk iops
   - Read/Write bytes/sec
 
-
-
 ### Virtual Machine Level
 
 - CPU
