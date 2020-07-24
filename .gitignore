@@ -1,2 +1,8 @@
 /venv/
-idea/shelf
+.idea/
+.vagrant
+*.key
+*.pem
+.vscode
+
+
