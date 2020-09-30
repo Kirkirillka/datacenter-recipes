@@ -1,0 +1,33 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: my-own-deployment
+  namespace: default
+  labels:
+    app: my-own
+spec:
+  selector:
+    matchLabels:
+      app: my-own
+      type: web
+  replicas: 2
+  template:
+    metadata:
+      labels:
+        app: my-own
+        type: web
+    spec:
+      containers:
+        - name: nginx
+          image: nginx:1.13
+          ports:
+            - containerPort: 80
+          resources:
+            requests:
+              cpu: 100m
+              memory: 100Mi
+            limits:
+              cpu: 200m
+              memory: 100Mi
+

@@ -37,3 +37,36 @@ In robotics and automation, a *control loop* is a non-terminating loop that regu
 ### Container images
 
 A container image is a ready-to-run software package, containing everything needed to run an application: the code and any runtime it requires, application and system libraries, and default values for any essential settings.
+
+
+## Deployment
+
+Deployment ensures that only a certain number of Pods are down while they are being updated.
+
+## ReplicaSet
+
+A ReplicaSet's purpose is to maintain a stable set of replica Pods running at any given time.
+
+## StatefuleSet
+
+StatefulSet is the workload API object used to manage stateful applications.
+
+Manages the deployment and scaling of a set of Pods, and provides guarantees about the ordering and uniqueness of these Pods.
+
+StatefulSets are valuable for applications that require one or more of the following.
+
+- Stable, unique network identifiers.
+- Stable, persistent storage.
+- Ordered, graceful deployment and scaling.
+- Ordered, automated rolling updates.
+
+
+## DaemonSet
+
+A DaemonSet ensures that all (or some) Nodes run a copy of a Pod. As nodes are added to the cluster, Pods are added to them. As nodes are removed from the cluster, those Pods are garbage collected. Deleting a DaemonSet will clean up the Pods it created.
+
+Some typical uses of a DaemonSet are:
+
+- running a cluster storage daemon on every node
+- running a logs collection daemon on every node
+- running a node monitoring daemon on every node
