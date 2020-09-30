@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: python-hello-world
+spec:
+  containers:
+    - image: python
+      name: python-hello-world
+      command: ["python", "-c", "print('Hello World')"]
+      resources:
+        limits:
+          cpu: 100m
+          memory: 100Mi
