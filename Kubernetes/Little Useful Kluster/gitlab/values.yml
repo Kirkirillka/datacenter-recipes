@@ -1,0 +1,3 @@
+--set global.hosts.domain=gitlab-on-k8s.com
+
+--set certmanager-issuer.email=kirillkukarcev@gmail.com
