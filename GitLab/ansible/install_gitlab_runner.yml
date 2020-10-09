@@ -1,0 +1,7 @@
+- hosts: all
+  become: yes
+  vars_files:
+    - vars/main.yml
+  roles:
+    - role: zaxos.docker-ce-ansible-role
+    - role: riemers.gitlab-runner

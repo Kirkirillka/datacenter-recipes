@@ -1,0 +1,51 @@
+version: "3"
+services:
+  gitlab-ce:
+    image: 'gitlab/gitlab-ce:13.3.2-ce.0'
+    restart: always
+    hostname: 'gitlab-ce'
+    ports:
+      - '443:443'
+      - '80:80'
+      - '22:22'
+    volumes:
+      - './gitlab/config:/etc/gitlab'
+      - './gitlab/logs:/var/log/gitlab'
+      - './gitlab/data:/var/opt/gitlab'
+
+  gitlab-runner:
+    image: gitlab/gitlab-runner:latest
+    restart: unless-stopped
+    volumes:
+      - ./gitlab/config/ssl:/etc/gitlab-runner/certs
+      - ./gitlab-runner/:/etc/gitlab-runner/
+      - /var/run/docker.sock:/var/run/docker.sock
+    depends_on:
+      - s3_cache
+
+  s3_cache:
+    image: minio/minio
+    environment:
+      - MINIO_ACCESS_KEY=${MINIO_ACCESS_KEY:-minio12345678}
+      - MINIO_SECRET_KEY=${MINIO_SECRET_KEY:-minio12345678}
+    volumes:
+      - s3-cache-volume:/data
+    ports:
+      - 9000:9000
+    command: "server /data"
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:9000/minio/health/live"]
+      interval: 30s
+      timeout: 20s
+      retries: 3
+
+  plantuml:
+      image: plantuml/plantuml-server:tomcat
+      expose:
+        - 8080
+
+
+
+volumes:
+  s3-cache-volume:
+

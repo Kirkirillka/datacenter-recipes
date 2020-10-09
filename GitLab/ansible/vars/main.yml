@@ -1,0 +1,16 @@
+# For geerlingguy/gitlab
+gitlab_domain: gitlab-ce
+
+# For riemers/ansible-gitlab-runner
+gitlab_runner_registration_token: "y1aUxdiWo3QfYS-EB4Fi"
+gitlab_runner_coordinator_url: https://gitlab-ci
+gitlab_runner_runners:
+  - name: 'Ansible Docker GitLab Docker Runner'
+    executor: docker
+    docker_image: 'alpine'
+    docker_volumes:
+      - "/var/run/docker.sock:/var/run/docker.sock"
+      - "/cache"
+    extra_configs:
+      runners.docker.sysctls:
+        net.ipv4.ip_forward: "1"

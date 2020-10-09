@@ -1,0 +1,33 @@
+concurrent = 1
+check_interval = 0
+
+[session_server]
+  session_timeout = 1800
+
+[[runners]]
+  name = "Gitlab Docker Runner"
+  url = "http://gitlab-ce/"
+  token = "8o3nzzi-qAfbXFCzLMTA"
+  executor = "docker"
+  environment = ["DOCKER_DRIVER=overlay2"]
+  [runners.custom_build_dir]
+  [runners.docker]
+    tls_verify = false
+    image = "ubuntu:18.04"
+    privileged = true
+    disable_entrypoint_overwrite = false
+    oom_kill_disable = false
+    disable_cache = false
+    volumes = ["/cache", "/var/run/docker.sock"]
+    shm_size = 0
+    cpus = "2"
+  [runners.cache]
+    Type = "s3"
+    Shared = true
+    [runners.cache.s3]
+    	ServerAddress = "s3_cache:9000" # Your MinIO server IP and port
+    	AccessKey = "minio12345678" # The access key you declared in the MinIO configuration
+    	SecretKey = "minio12345678" # The secret key you declared in the MinIO configuration
+    	BucketName = "gitlab-runner" # Name of the bucket you created
+    	BucketLocation = "eu-west-1"
+    	Insecure = true

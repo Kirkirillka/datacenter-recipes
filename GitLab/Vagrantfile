@@ -1,0 +1,45 @@
+Vagrant.configure("2") do |config|
+
+    config.vm.define "gitlab-ce" do |node|
+        node.vm.box = "ubuntu/bionic64"
+        node.vm.hostname = "ubuntu-gitlab-ce"
+        node.vm.network "private_network", ip: "192.168.70.10"
+        
+        node.vm.provider "virtualbox" do |v|
+            v.memory = 4096
+            v.cpus = 4
+          end
+
+        node.vm.provision :hosts, :sync_hosts => true
+        node.vm.provision "ansible" do |ansible|
+            ansible.playbook = "ansible/install_gitlab_ce.yml"
+        end
+        
+    end
+
+    config.vm.define "gitlab-runner" do |node|
+        node.vm.box = "ubuntu/bionic64"
+        node.vm.hostname = "ubuntu-gitlab-runner"
+        node.vm.network "private_network", ip: "192.168.70.20"
+
+        node.vm.provider "virtualbox" do |v|
+            v.memory = 4096
+            v.cpus = 4
+          end
+
+        node.vm.provision :hosts, :sync_hosts => true
+
+        node.vm.provision "shell", inline: <<-SHELL
+            echo | openssl s_client -servername www.example.com -connect gitlab-ce:443 2>/dev/null  | sudo openssl x509 -text -out /usr/local/share/ca-certificates/gitlab-ce.crt
+            sudo update-ca-certificates
+        SHELL
+
+        node.vm.provision "ansible" do |ansible|
+            ansible.playbook = "ansible/install_gitlab_runner.yml"
+        end
+    end
+
+
+end
+
+
