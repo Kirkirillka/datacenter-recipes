@@ -1,0 +1,34 @@
+- hosts: workshop
+  tasks:
+    - name: Disable firewalld
+      service:
+        name: firewalld
+        state: stopped
+        enabled: false
+    - name: Disable SELinux
+      selinux:
+        state: disabled
+    - name: Make sure epel-release is installed
+      yum:
+        name: epel-release
+        state: latest
+    - name: Install docker, pip via Yum
+      yum:
+        name: [docker-latest, python-pip]
+        state: latest
+    - name: install certain python modules for docker
+      pip:
+        name: "{{ item }}"
+        state: present
+      with_items:
+        - docker
+    - name: Start docker and make in autorunning
+      service:
+        name: docker-latest
+        state: restarted
+        enabled: yes
+    - name: Run nginx in a container
+      docker_container:
+        name: web-nginx
+        image: nginx
+        published_ports: 0.0.0.0:10000:80

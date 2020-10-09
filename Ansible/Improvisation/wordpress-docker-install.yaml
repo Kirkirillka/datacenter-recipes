@@ -1,0 +1,52 @@
+- hosts: workshop
+  tasks:
+    - name: Disable firewalld
+      service:
+        name: firewalld
+        state: stopped
+        enabled: false
+    - name: Disable SELinux
+      selinux:
+        state: disabled
+    - name: Make sure epel-release is installed
+      yum:
+        name: epel-release
+        state: latest
+    - name: Install docker, pip via Yum
+      yum:
+        name: [docker, python-pip]
+        state: latest
+    - name: install certain python modules for docker
+      pip:
+        name: "{{ item }}"
+        state: present
+      with_items:
+        - docker
+    - name: Start docker and make in autorunning
+      service:
+        name: docker
+        state: restarted
+        enabled: yes
+    - name: Run wordpress in a container
+      docker_container:
+        name: wordpress
+        image: wordpress
+        ports:
+          - "127.0.0.1:10000:80"
+        restart_policy: always
+        restart: yes
+    - name: Install nginx
+      yum:
+        name: nginx
+        state: latest
+    - name: Apply new configuration
+      copy:
+        src: docker-wordpress-nginx.conf
+        dest: /etc/nginx/conf.d/docker-wordpress-nginx.conf
+    - name: Start nginx
+      service:
+        name: nginx
+        state: restarted
+        enabled: yes
+    - name: Reboot the server
+      reboot:
