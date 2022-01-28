@@ -9,7 +9,7 @@
  2859  kubectl edit
  2860  kubectl get rs
  2861  kubectl set image deployment my-deployment '*=nginx:1.13'
- 2862  kubectl describe rs 
+ 2862  kubectl describe rs
  2863  kubectl get rs
  2864  kubectl rollout undo deployment my-deployment
  2865  kubectl create -f deployment-with-stuff.yml
